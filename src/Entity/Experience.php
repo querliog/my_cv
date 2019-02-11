@@ -6,12 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="App\Repository\ExperienceRepository")
  */
 class Experience
 {
     /**
-     * @ApiResource
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")

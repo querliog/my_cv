@@ -47,7 +47,7 @@ class LuckyController extends Controller
             return $this->redirectToRoute('app_lucky_number');
         }
         
-        public function loisir()
+        public function loisirs()
         {
             $form = new Loisir();
             $form->setName('Mes Loisirs');

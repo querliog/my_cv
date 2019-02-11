@@ -5,13 +5,14 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 
+
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass="App\Repository\FormationRepository")
  */
 class Formation
 {
     /**
-     * @ApiResource
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
