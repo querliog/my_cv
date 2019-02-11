@@ -1,0 +1,2 @@
+[11-Feb-2019 08:59:31 UTC] PHP Fatal error:  Class 'App\Entity\EntityRepository' not found in /home/ubuntu/workspace/my_cv/src/Entity/Experience.php on line 10
+[11-Feb-2019 10:25:14 UTC] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/ubuntu/workspace/my_cv/src/Repository/LoisirRepository.php on line 3

@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ExperienceRepository")
@@ -10,6 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Experience
 {
     /**
+     * @ApiResource
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
@@ -20,6 +22,21 @@ class Experience
      * @ORM\Column(type="string", length=255)
      */
     private $name;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lieu;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $description;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $annees;
 
     public function getId(): ?int
     {
@@ -34,7 +51,43 @@ class Experience
     public function setName(string $name): self
     {
         $this->name = $name;
-        
+
+        return $this;
+    }
+
+    public function getLieu(): ?string
+    {
+        return $this->lieu;
+    }
+
+    public function setLieu(string $lieu): self
+    {
+        $this->lieu = $lieu;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getAnnees(): ?string
+    {
+        return $this->annees;
+    }
+
+    public function setAnnees(string $annees): self
+    {
+        $this->annees = $annees;
+
         return $this;
     }
 }
