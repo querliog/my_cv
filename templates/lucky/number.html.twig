@@ -44,7 +44,7 @@
 				</div>
 				
 				<div class="sectionContent">
-					<p>Attiré par le domaine de la communication, j'ai un intérêt particulier pour le visuel. C'est pourquoi j'ai choisi la formation Métiers du Multimédia et de l'Internet qui me permet de m'exprimer dans ces domaines. En plus de cela, elle me fournit un apport théorique dans des disciplines comme la communication, le droit ou le marketing, tout en m'ouvrant une porte vers des savoirs plus techniques tels que le développement web ou encore l'algorithmique. Je suis actuellement à la recherche d'un stage de dix semaines, dans le domaine de la communication, pour clôturer mon cursus et me permettre d'avancer dans mon projet universitaire et  professionnel.</p>
+					<p class="subDetails">Attiré par le domaine de la communication, j'ai un intérêt particulier pour le visuel. C'est pourquoi j'ai choisi la formation Métiers du Multimédia et de l'Internet qui me permet de m'exprimer dans ces domaines. En plus de cela, elle me fournit un apport théorique dans des disciplines comme la communication, le droit ou le marketing, tout en m'ouvrant une porte vers des savoirs plus techniques tels que le développement web ou encore l'algorithmique. Je suis actuellement à la recherche d'un stage de dix semaines, dans le domaine de la communication, pour clôturer mon cursus et me permettre d'avancer dans mon projet universitaire et  professionnel.</p>
 				</div>
 			</article>
 			<div class="clear"></div>
@@ -59,33 +59,20 @@
 				<div class="sectionContent">
 				{% for experience in experiences %}
 					<article>
-						<h2>{{ experience.getName() }}</h2>
-						<p class="subDetails">{{experience.getannees}}</p>
-						<p></p>
-						<p class="subDetails">{{ experience.getdescription() }}</p>
-						<a href="{{ path('experience_edit', {'id': experience.getId ()}) }}">Modifier l'expéience</a>
-						
+						<ul>
+							<li>	
+								<h2>{{ experience.getName() }}</h2>
+								<p class="subDetails">{{experience.getannees}}</p>
+								<p class="subDetails">{{ experience.getdescription() }}</p>
+							</li>	
+						</ul>	
+							<a href="{{ path('experience_edit', {'id': experience.getId ()}) }}">Modifier l'expérience</a>
+							<a href="{{ path('experience_delete', {'id': experience.getId ()}) }}">Supprimer l'expérience</a>
 						
 					</article>
 				{% endfor %}
-				<a href="{{ path('experience_new') }}">Ajouter une expérience</a>
+				<a href="{{ path('experience_new') }}">Nouvelle expérience</a>
 			</div>
-			</div>
-			<div class="clear"></div>
-		</section>
-		
-		
-		<section>
-			<div class="sectionTitle">
-				<h1>Mes loisirs</h1>
-			</div>
-			
-			<div class="sectionContent">
-				<ul class="keySkills">
-					<li>Musique</li>
-					<li>Sport</li>
-					<li>Démineur</li>
-				</ul>
 			</div>
 			<div class="clear"></div>
 		</section>
@@ -96,22 +83,38 @@
 				<h1>Formation</h1>
 			</div>
 			<div class="sectionContent">
-				{% for formation in formations %}
-					<article>
-						<ul>
-							<li>
-								<h2>{{ formation.getName() }}</h2>
-								<p class="subDetails">{{formation.getannees}}</p>
-								<p>{{formation.getdescription}}</p>
-							</li>	
-						</ul>
-						
-						<div class="bouton"> 
-							<a href="{{ path('formation_edit', {'id': formation.getId ()}) }}">Modifier la formation</a>
-						</div>	
-					</article>
-				{% endfor %}
-				<a href="{{ path('formation_new') }}">Ajouter une formation</a>
+				<div class="sectionContent">
+					{% for formation in formations %}
+						<article>
+							<ul>
+								<li>
+									<h2>{{ formation.getName() }}</h2>
+									<p class="subDetails">{{formation.getannees}}</p>
+									<p class="subDetails">{{formation.getdescription}}</p>
+								</li>	
+							</ul>
+								<a href="{{ path('formation_edit', {'id': formation.getId ()}) }}">Modifier la formation</a>
+								<a href="{{ path('formation_delete', {'id': formation.getId ()}) }}">Supprimer la formation</a>
+						</article>
+					{% endfor %}
+					<a href="{{ path('formation_new') }}">Nouvelle formation</a>
+				</div>	
+			</div>
+			<div class="clear"></div>
+		</section>
+				
+			
+				<section>
+			<div class="sectionTitle">
+				<h1>Mes loisirs</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<ul class="keySkills">
+					<li>Musique</li>
+					<li>Sport</li>
+					<li>Démineur</li>
+				</ul>
 			</div>
 			<div class="clear"></div>
 		</section>

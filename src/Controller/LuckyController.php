@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\Formation;
 use App\Entity\Experience;
 use App\Entity\Loisir;
+use Symfony\Component\Routing\Annotation\Route;
 
 class LuckyController extends Controller
     {
@@ -56,5 +57,10 @@ class LuckyController extends Controller
             $eManager->flush();
             
             return $this->redirectToRoute('app_lucky_number');
+        }
+        
+        public function adminAction()
+        {
+            return new Response('<html><body>Admin page!</body></html>');
         }
     }

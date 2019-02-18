@@ -8,10 +8,7 @@
 app_lucky_number:
     path: /lucky/number
     controller: App\Controller\LuckyController::number
-    
-form_loisir:
-    path: /loisir/create
-    controller: App\controller
+
     
 form_formation:
     path: /formation/create
@@ -24,3 +21,7 @@ form_experience:
 form_loisir:
     path: /loisir/create
     controller: App\controller\LuckyController::loisir
+    
+admin:
+    path: /admin
+    controller: App\Controller\LuckyController::admin

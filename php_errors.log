@@ -1,2 +1,8 @@
 [11-Feb-2019 08:59:31 UTC] PHP Fatal error:  Class 'App\Entity\EntityRepository' not found in /home/ubuntu/workspace/my_cv/src/Entity/Experience.php on line 10
 [11-Feb-2019 10:25:14 UTC] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home/ubuntu/workspace/my_cv/src/Repository/LoisirRepository.php on line 3
+[18-Feb-2019 13:45:08 UTC] PHP Fatal error:  Cannot declare class App\Controller\LuckyController, because the name is already in use in /home/ubuntu/workspace/my_cv/src/Controller/LuckyController.php on line 0
+[18-Feb-2019 13:47:39 UTC] PHP Fatal error:  Cannot declare class App\Controller\LuckyController, because the name is already in use in /home/ubuntu/workspace/my_cv/src/Controller/LuckyController.php on line 0
+[18-Feb-2019 13:52:53 UTC] PHP Fatal error:  Cannot declare class App\Controller\LuckyController, because the name is already in use in /home/ubuntu/workspace/my_cv/src/Controller/LuckyController.php on line 0
+[18-Feb-2019 14:00:27 UTC] PHP Fatal error:  Cannot declare class App\Controller\LuckyController, because the name is already in use in /home/ubuntu/workspace/my_cv/src/Controller/LuckyController.php on line 0
+[18-Feb-2019 14:03:43 UTC] PHP Fatal error:  Cannot declare class App\Controller\LuckyController, because the name is already in use in /home/ubuntu/workspace/my_cv/src/Controller/LuckyController.php on line 0
+[18-Feb-2019 14:06:11 UTC] PHP Fatal error:  Cannot declare class App\Controller\LuckyController, because the name is already in use in /home/ubuntu/workspace/my_cv/src/Controller/LuckyController.php on line 0

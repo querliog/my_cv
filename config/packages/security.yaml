@@ -1,13 +1,23 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        in_memory: { memory: ~ }
+        in_memory: 
+            memory:
+                users:
+                        ryan:
+                            password: ryanpass
+                            roles: 'ROLE_USER'
+                        admin:
+                            password: kitten
+                            roles: 'ROLE_ADMIN'
+ 
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             anonymous: true
+            http_basic: true
 
             # activate different ways to authenticate
 
@@ -22,3 +32,5 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        # require ROLE_ADMIN for /admin*
+        - { path: ^/admin, roles: ROLE_ADMIN }

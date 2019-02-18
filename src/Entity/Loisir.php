@@ -26,6 +26,11 @@ class Loisir
      */
     private $annee;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Description;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +56,18 @@ class Loisir
     public function setAnnee(string $annee): self
     {
         $this->annee = $annee;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->Description;
+    }
+
+    public function setDescription(string $Description): self
+    {
+        $this->Description = $Description;
 
         return $this;
     }
