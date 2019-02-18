@@ -63,9 +63,12 @@
 						<p class="subDetails">{{experience.getannees}}</p>
 						<p></p>
 						<p class="subDetails">{{ experience.getdescription() }}</p>
+						<a href="{{ path('experience_edit', {'id': experience.getId ()}) }}">Modifier l'expéience</a>
+						
 						
 					</article>
 				{% endfor %}
+				<a href="{{ path('experience_new') }}">Ajouter une expérience</a>
 			</div>
 			</div>
 			<div class="clear"></div>
@@ -102,8 +105,13 @@
 								<p>{{formation.getdescription}}</p>
 							</li>	
 						</ul>
+						
+						<div class="bouton"> 
+							<a href="{{ path('formation_edit', {'id': formation.getId ()}) }}">Modifier la formation</a>
+						</div>	
 					</article>
 				{% endfor %}
+				<a href="{{ path('formation_new') }}">Ajouter une formation</a>
 			</div>
 			<div class="clear"></div>
 		</section>
