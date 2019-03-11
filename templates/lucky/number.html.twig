@@ -1,4 +1,4 @@
-<h1>Your lucky number is {{ number }}</h1>
+
 <html>
 <head>
 <title>Gary Querlioz - Curriculum Vitae</title>
@@ -18,7 +18,7 @@
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
 		<div id="headshot" class="quickFade">
-			<img src="{{ asset ('image/download.png') }}" alt="GAry Querlioz" />
+			<img src="{{ asset ('image/download.png') }}" alt="Gary Querlioz" />
 		</div>
 		
 		<div id="name">
@@ -42,10 +42,12 @@
 				<div class="sectionTitle">
 					<h1>Description personnelle</h1>
 				</div>
-				
+			
 				<div class="sectionContent">
-					<p class="subDetails">Attiré par le domaine de la communication, j'ai un intérêt particulier pour le visuel. C'est pourquoi j'ai choisi la formation Métiers du Multimédia et de l'Internet qui me permet de m'exprimer dans ces domaines. En plus de cela, elle me fournit un apport théorique dans des disciplines comme la communication, le droit ou le marketing, tout en m'ouvrant une porte vers des savoirs plus techniques tels que le développement web ou encore l'algorithmique. Je suis actuellement à la recherche d'un stage de dix semaines, dans le domaine de la communication, pour clôturer mon cursus et me permettre d'avancer dans mon projet universitaire et  professionnel.</p>
-				</div>
+					<div class="sectionContent">
+						<p class="subDetails">Attiré par le domaine de la communication, j'ai un intérêt particulier pour le visuel. C'est pourquoi j'ai choisi la formation Métiers du Multimédia et de l'Internet qui me permet de m'exprimer dans ces domaines. En plus de cela, elle me fournit un apport théorique dans des disciplines comme la communication, le droit ou le marketing, tout en m'ouvrant une porte vers des savoirs plus techniques tels que le développement web ou encore l'algorithmique. Je suis actuellement à la recherche d'un stage de dix semaines, dans le domaine de la communication, pour clôturer mon cursus et me permettre d'avancer dans mon projet universitaire et  professionnel.</p>
+					</div>
+				</div>	
 			</article>
 			<div class="clear"></div>
 		</section>
@@ -66,12 +68,12 @@
 								<p class="subDetails">{{ experience.getdescription() }}</p>
 							</li>	
 						</ul>	
-							<a href="{{ path('experience_edit', {'id': experience.getId ()}) }}">Modifier l'expérience</a>
-							<a href="{{ path('experience_delete', {'id': experience.getId ()}) }}">Supprimer l'expérience</a>
+							<button type="submit" id="submit" name="submit" class="form-btn semibold"><a href="{{ path('experience_edit', {'id': experience.getId ()}) }}">Modifier l'expérience</a></button>
+							<button type="submit" id="submit" name="submit" class="form-btn-suppr"><a href="{{ path('experience_delete', {'id': experience.getId ()}) }}">Supprimer l'expérience</a></button>
 						
 					</article>
 				{% endfor %}
-				<a href="{{ path('experience_new') }}">Nouvelle expérience</a>
+				<button><a href="{{ path('experience_new') }}">Nouvelle expérience</a></button>
 			</div>
 			</div>
 			<div class="clear"></div>
@@ -93,11 +95,11 @@
 									<p class="subDetails">{{formation.getdescription}}</p>
 								</li>	
 							</ul>
-								<a href="{{ path('formation_edit', {'id': formation.getId ()}) }}">Modifier la formation</a>
-								<a href="{{ path('formation_delete', {'id': formation.getId ()}) }}">Supprimer la formation</a>
+								<button type="submit" id="submit" name="submit" class="form-btn semibold"><a class="liens" href="{{ path('formation_edit', {'id': formation.getId ()}) }}">Modifier la formation</a></button>
+								<button type="submit" id="submit" name="submit" class="form-btn-suppr"><a class="liens" href="{{ path('formation_delete', {'id': formation.getId ()}) }}">Supprimer la formation</a></button>
 						</article>
 					{% endfor %}
-					<a href="{{ path('formation_new') }}">Nouvelle formation</a>
+					<button>Nouvelle formation</a></button>
 				</div>	
 			</div>
 			<div class="clear"></div>
@@ -119,8 +121,56 @@
 			<div class="clear"></div>
 		</section>
 		
+	<head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"></head>
+<br />
+		<section>	
+			<div class="inner contact">
+                <!-- Form Area -->
+                <div class="contact-form">
+                    <!-- Form -->
+                    <form id="contact-us" method="post" action="#">
+                        <!-- Left Inputs -->
+                        <div class="col-xs-6 wow animated slideInLeft" data-wow-delay=".5s">
+                            <!-- Name -->
+                            <input type="text" name="name" id="name" required="required" class="form" placeholder="Name" />
+                            <!-- Email -->
+                            <input type="email" name="mail" id="mail" required="required" class="form" placeholder="Email" />
+                            <!-- Subject -->
+                            <input type="text" name="subject" id="subject" required="required" class="form" placeholder="Subject" />
+                        </div><!-- End Left Inputs -->
+                        <!-- Right Inputs -->
+                        <div class="col-xs-6 wow animated slideInRight" data-wow-delay=".5s">
+                            <!-- Message -->
+                            <textarea name="message" id="message" class="form textarea"  placeholder="Message"></textarea>
+                        </div><!-- End Right Inputs -->
+                        <!-- Bottom Submit -->
+                        <div class="relative fullwidth col-xs-12">
+                            <!-- Send Button -->
+                            <button type="submit" id="submit" name="submit" class="form-btn semibold">Send Message</button> 
+                        </div><!-- End Bottom Submit -->
+                        <!-- Clear -->
+                        <div class="clear"></div>
+                    </form>
+
+                    <!-- Your Mail Message -->
+                    <div class="mail-message-area">
+                        <!-- Message -->
+                        <div class="alert gray-bg mail-message not-visible-message">
+                            <strong>Merci !</strong> Votre email a bien été envoyé.
+                        </div>
+                    </div>
+
+                </div><!-- End Contact Form Area -->
+            </div><!-- End Inner -->
+
+		</section>
+
+		
 	</div>
 </div>
+
+
+
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
